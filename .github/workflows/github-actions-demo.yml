@@ -23,3 +23,15 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "? This job's status is ${{ job.status }}."
+      -
+        name: Create a folder
+        run: |
+          mkdir sharedfolder
+
+          touch sharedfolder/test1.sh
+          touch sharedfolder/test2.sh
+      - name: Upload the folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: sharedfolder # or path/to/artifact
