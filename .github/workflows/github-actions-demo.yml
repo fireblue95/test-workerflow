@@ -9,6 +9,10 @@ on:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        temp-version: [ "3.7", "3.8", "3.9", "3.10", "3.11" ]
+        
     steps:
       - run: echo "? The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "? This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -26,10 +30,14 @@ jobs:
       -
         name: Create a folder
         run: |
-          mkdir sharedfolder
+          mkdir -p sharedfolder
 
-          touch sharedfolder/test1.sh
-          touch sharedfolder/test2.sh
+          touch sharedfolder/${{ matrix.temp-version }}_test1.sh
+          touch sharedfolder/${{ matrix.temp-version }}_test2.sh
+
+  Upload_the_github:
+    runs-on: ubuntu-latest
+    steps:
       - name: Upload the folder
         uses: actions/upload-artifact@v3
         with:
