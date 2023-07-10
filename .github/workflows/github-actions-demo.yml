@@ -13,7 +13,6 @@ jobs:
       matrix:
         temp-version: [ "3.7", "3.8", "3.9", "3.10", "3.11" ]
         py-version: [ "3.6", "3.7" ]
-        cu-version: [ "999" ]
         include:
           -
             temp-version: "3.7"
@@ -33,6 +32,7 @@ jobs:
           else
             echo "Task A"
           fi
+          echo "test $(if [ "${{ matrix.cu-version }}" = "" ]; then "tttkkk" else "kkk" fi)"
           echo "? The job was automatically triggered by a ${{ github.event_name }} event."
           echo "? This job is now running on a ${{ runner.os }} server hosted by GitHub!"
           echo "? The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
