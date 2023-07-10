@@ -12,6 +12,16 @@ jobs:
     strategy:
       matrix:
         temp-version: [ "3.7", "3.8", "3.9", "3.10", "3.11" ]
+        py-version: [ "3.6", "3.7" ]
+        include:
+          -
+            temp-version: "3.7"
+            py-version: "3.6"
+            cu-version: "113"
+          -
+            temp-version: "3.8"
+            py-version: "3.7"
+            cu-version: "117"
         
     steps:
       - run: echo "? The job was automatically triggered by a ${{ github.event_name }} event."
