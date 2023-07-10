@@ -35,10 +35,10 @@ jobs:
           touch sharedfolder/${{ matrix.temp-version }}_test1.sh
           touch sharedfolder/${{ matrix.temp-version }}_test2.sh
 
-  Upload_the_github:
-    runs-on: ubuntu-latest
-    needs: Explore-GitHub-Actions
-    steps:
+  # Upload_the_github:
+  #   runs-on: ubuntu-latest
+  #   needs: Explore-GitHub-Actions
+  #   steps:
       - name: Upload the folder
         uses: actions/upload-artifact@v3
         with:
