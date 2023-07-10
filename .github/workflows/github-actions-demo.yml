@@ -30,6 +30,8 @@ jobs:
           echo "cu-version: --> ${{ matrix.cu-version }}"
           if [ "${{ matrix.cu-version }}" = "" ]; then
             echo "empty"
+          else
+            echo "Task A"
           fi
           echo "? The job was automatically triggered by a ${{ github.event_name }} event."
           echo "? This job is now running on a ${{ runner.os }} server hosted by GitHub!"
