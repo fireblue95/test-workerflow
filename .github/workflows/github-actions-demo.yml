@@ -24,9 +24,13 @@ jobs:
             cu-version: "117"
         
     steps:
-      - run: echo "? The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "? This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "? The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - run: |
+          echo "temp-version: --> ${{ matrix.temp-version }}"
+          echo "py-version: --> ${{ matrix.py-version }}"
+          echo "cu-version: --> ${{ matrix.cu-version }}"
+          echo "? The job was automatically triggered by a ${{ github.event_name }} event."
+          echo "? This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+          echo "? The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
         with:
