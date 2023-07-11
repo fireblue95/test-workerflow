@@ -11,23 +11,25 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        temp-version: [ "3.7", "3.8", "3.9", "3.10", "3.11" ]
-        py-version: [ "3.6", "3.7" ]
-        include:
-          -
-            temp-version: "3.7"
-            cu-version: "113"
-          -
-            temp-version: "3.8"
-            py-version: "3.7"
-            cu-version: "117"
+        # temp-version: [ "3.7", "3.8", "3.9", "3.10", "3.11" ]
+        python-version: [ "3.7.10", "3.8.10", "3.9.10", "3.10.10", "3.11.3" ]
+        torch-version: [ "1.10.0", "1.11.0", "1.12.0", "1.13.0", "2.0.0" ]
+        cuda-version: [ "10.2.89", "11.3.1", "11.6.2", "11.7.1", "11.8.0" ]
+        # include:
+        #   -
+        #     temp-version: "3.7"
+        #     cu-version: "113"
+        #   -
+        #     temp-version: "3.8"
+        #     python-version: "3.7"
+        #     cu-version: "117"
     env:
-      MY_ENV_VAR: ${{ matrix.py-version == '3.6' && 'value_for_main_branch' || 'value_for_other_branches' }}
+      MY_ENV_VAR: ${{ matrix.python-version == '3.6' && 'value_for_main_branch' || 'value_for_other_branches' }}
     
     steps:
       - run: |
           echo "temp-version: --> ${{ matrix.temp-version }}"
-          echo "py-version: --> ${{ matrix.py-version }}"
+          echo "python-version: --> ${{ matrix.python-version }}"
           echo "cu-version: --> ${{ matrix.cu-version }}"
           if [ "${{ matrix.cu-version }}" = "" ]; then
             echo "empty"
