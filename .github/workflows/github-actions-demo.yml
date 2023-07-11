@@ -39,7 +39,7 @@ jobs:
 
           echo "MY_ENV_VAR: --> ${{ env.MY_ENV_VAR }}"
         env:
-          MY_ENV_VAR: ${{ github.ref == 'refs/heads/main' && 'value_for_main_branch' || 'value_for_other_branches' }}
+          MY_ENV_VAR: ${{ matrix.py-version == '3.6' && 'value_for_main_branch' || 'value_for_other_branches' }}
       - name: Check out repository code
         uses: actions/checkout@v2
         with:
