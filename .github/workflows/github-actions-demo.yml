@@ -24,9 +24,20 @@ jobs:
         #     python-version: "3.7"
         #     cu-version: "117"
         exclude:
+        # base on cuda-version
           -
             cuda-version: "11.8.0"
             python-version: "3.7.10"
+          -
+            cuda-version: "11.6.2"
+            python-version: "3.11.3"
+          -
+            cuda-version: "11.3.1"
+            python-version: "3.11.3"
+          -
+            cuda-version: "10.2.89"
+            python-version: "3.11.3"
+
     env:
       MY_ENV_VAR: ${{ matrix.python-version == '3.6' && 'value_for_main_branch' || 'value_for_other_branches' }}
     
