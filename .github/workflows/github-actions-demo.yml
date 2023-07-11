@@ -54,11 +54,54 @@ jobs:
             torch-version: "1.13.0"
         # Cuda 11.8.0
         # ===============================
-        
-
-
-
-
+        # ===============================
+        # Cuda 11.7.1
+          -
+            cuda-version: "11.7.1"
+            torch-version: "1.10.0"
+          -
+            cuda-version: "11.7.1"
+            torch-version: "1.11.0"
+          -
+            cuda-version: "11.7.1"
+            torch-version: "1.12.0"
+        # Cuda 11.7.1
+        # ===============================
+        # ===============================
+        # Cuda 11.6.2
+          -
+            cuda-version: "11.6.2"
+            torch-version: "1.10.0"
+          -
+            cuda-version: "11.6.2"
+            torch-version: "1.11.0"
+          -
+            cuda-version: "11.6.2"
+            torch-version: "2.0.0"
+        # Cuda 11.6.2
+        # ===============================
+        # Cuda 11.3.1
+          -
+            cuda-version: "11.3.1"
+            torch-version: "1.10.0"
+          -
+            cuda-version: "11.3.1"
+            torch-version: "1.13.0"
+          -
+            cuda-version: "11.3.1"
+            torch-version: "2.0.0"
+        # Cuda 11.3.1
+        # ===============================
+        # ===============================
+        # Cuda 10.2.89
+          -
+            cuda-version: "10.2.89"
+            torch-version: "1.13.0"
+          -
+            cuda-version: "10.2.89"
+            torch-version: "2.0.0"
+        # Cuda 10.2.89
+        # ===============================
 
 
 
