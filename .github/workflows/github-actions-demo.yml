@@ -21,7 +21,8 @@ jobs:
             temp-version: "3.8"
             py-version: "3.7"
             cu-version: "117"
-        
+    env:
+      MY_ENV_VAR: ${{ github.ref == 'refs/heads/main' && 'value_for_main_branch' || 'value_for_other_branches' }}
     steps:
       - run: |
           echo "temp-version: --> ${{ matrix.temp-version }}"
@@ -36,6 +37,9 @@ jobs:
           echo "? The job was automatically triggered by a ${{ github.event_name }} event."
           echo "? This job is now running on a ${{ runner.os }} server hosted by GitHub!"
           echo "? The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+          echo "MY_ENV_VAR: --> ${{ env.MY_ENV_VAR }}"
+          
       - name: Check out repository code
         uses: actions/checkout@v2
         with:
