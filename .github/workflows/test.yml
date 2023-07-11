@@ -24,6 +24,7 @@ jobs:
           echo "cuda-version: --> ${{ matrix.cuda-version }}"
           if [ "${{ matrix.cuda-version }}" = "" ]; then
             echo "empty"
+            
           else
             echo "Task A"
           fi
