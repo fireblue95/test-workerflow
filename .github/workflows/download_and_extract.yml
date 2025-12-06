@@ -19,10 +19,10 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Display structure of downloaded files
         run: ls -R
-        
+
       - name: 解壓縮檔案
         run: |
-          tar -xzf compressed/files.tar.gz -C extracted  # 解壓縮到指定目錄
+          tar -xzf files.tar.gz -C extracted  # 解壓縮到指定目錄
 
       - name: 列出檔案
         run: |
