@@ -1,8 +1,8 @@
-name: 下載並解壓縮工件
+name: Download artifacts
 
 on:
   workflow_run:
-    workflows: ["壓縮並上傳為工件"]
+    workflows: ["Upload artifacts"]
     types:
       - completed
 
@@ -22,8 +22,8 @@ jobs:
 
       - name: 解壓縮檔案
         run: |
-          tar -xzf files.tar.gz
+          tar -xzf compressed/files.tar.gz
 
-      - name: 列出檔案
+      - name: Display structure of downloaded files
         run: |
           ls -R
