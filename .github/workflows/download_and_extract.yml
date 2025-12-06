@@ -21,7 +21,7 @@ jobs:
 
       - name: Decompress files
         run: |
-          tar -xzf files.tar.gz
+          tar -xzf compressed-files/files.tar.gz
 
       - name: Display structure of downloaded files
         run: |
