@@ -35,7 +35,7 @@ jobs:
 
       - name: 解壓縮檔案
         run: |
-          tar -xzf compressed-files/files.tar.gz -C extracted  # 解壓縮到指定目錄
+          tar -xzf compressed/files.tar.gz -C extracted  # 解壓縮到指定目錄
 
       - name: 列出檔案
         run: |
