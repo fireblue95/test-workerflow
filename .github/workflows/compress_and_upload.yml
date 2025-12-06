@@ -23,3 +23,20 @@ jobs:
         with:
           name: compressed-files
           path: compressed/files.tar.gz
+  extract:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 下載工件
+        uses: actions/download-artifact@v4
+        with:
+          name: compressed-files
+          path: ./artifacts/
+
+      - name: 解壓縮檔案
+        run: |
+          tar -xzf compressed-files/files.tar.gz -C extracted  # 解壓縮到指定目錄
+
+      - name: 列出檔案
+        run: |
+          ls -R extracted  # 列出解壓縮後的檔案
