@@ -15,7 +15,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: compressed-files
-          path: ./artifacts/
+        #   path: ./artifacts/
+          run-id: ${{ github.event.workflow_run.id }}
 
       - name: 解壓縮檔案
         run: |
