@@ -11,20 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/download-artifact@v5
-        with:
-          run-id: ${{ github.event.workflow_run.id }}
-      - name: Display structure of downloaded files
-        run: ls -R
-
       - name: 下載工件
         uses: actions/download-artifact@v4
         with:
-        #   name: compressed-files
-        #   path: ./artifacts/
-          # run-id: ${{ github.event.workflow_run.id }}
+          name: compressed-files
+          run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: Display structure of downloaded files
+        run: ls -R
+        
       - name: 解壓縮檔案
         run: |
           tar -xzf compressed/files.tar.gz -C extracted  # 解壓縮到指定目錄
