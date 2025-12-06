@@ -18,7 +18,7 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Display structure of downloaded files
-        run: ls -R
+        run: ls
 
       - name: 解壓縮檔案
         run: |
