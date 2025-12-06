@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 檢出代碼
+      - name: Check the files
         uses: actions/checkout@v6
 
-      - name: 壓縮檔案
+      - name: Compress files
         run: |
           mkdir compressed
           tar -czf compressed/files.tar.gz .  # 壓縮當前目錄中的所有檔案和子目錄，並存儲為 files.tar.gz
 
-      - name: 上傳工件
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: compressed-files

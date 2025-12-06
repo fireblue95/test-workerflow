@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 下載工件
+      - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
           name: compressed-files
@@ -20,9 +20,9 @@ jobs:
       - name: Display structure of downloaded files
         run: ls
 
-      - name: 解壓縮檔案
+      - name: Decompress files
         run: |
-          tar -xzf compressed/files.tar.gz
+          tar -xzf files.tar.gz
 
       - name: Display structure of downloaded files
         run: |
