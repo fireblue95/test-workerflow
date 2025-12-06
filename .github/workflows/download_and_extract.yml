@@ -22,7 +22,7 @@ jobs:
 
       - name: 解壓縮檔案
         run: |
-          tar -xzf compressed/files.tar.gz
+          tar -xzf files.tar.gz
 
       - name: 列出檔案
         run: |
