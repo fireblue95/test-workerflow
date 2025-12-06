@@ -26,4 +26,4 @@ jobs:
 
       - name: 列出檔案
         run: |
-          ls -R extracted  # 列出解壓縮後的檔案
+          ls -R
