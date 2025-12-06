@@ -31,9 +31,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: compressed-files
-        #   path: ./artifacts/
+          path: ./artifacts/
           run-id: ${{ github.event.workflow_run.id }}
-          
+
       - name: 解壓縮檔案
         run: |
           tar -xzf compressed/files.tar.gz -C extracted  # 解壓縮到指定目錄
