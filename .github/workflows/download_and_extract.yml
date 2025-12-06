@@ -22,7 +22,7 @@ jobs:
         with:
         #   name: compressed-files
         #   path: ./artifacts/
-          run-id: ${{ github.event.workflow_run.id }}
+          # run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 解壓縮檔案
